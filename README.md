@@ -1,48 +1,42 @@
 
-# RTFTT‑Scaling
+# RTFTT MT5 Trade Scaling
 
-## Summary Project  
-The **RTFTT‑Scaling** project is a Python‑based utility designed to provide scaling operations on top of the core RTFTT (Risk‑Trade‑Flow‑Time‑Trade) system. It allows you to manage multiple trading accounts, monitor trade logs and error logs, and scale execution via a GUI interface and Docker deployment. The repository includes a full GUI script (`RTFTT_Scaling_Full_GUI.py`), account configuration (`RTFTT_accounts.json`), logging mechanisms, and containerised deployment files (`Dockerfile`, `docker‑compose.yml`) for easy setup in production or test environments.
+## Description
+**RTFTT MT5 Trade Scaling** is a Python-based MetaTrader 5 (MT5) automation tool that allows users to copy trades from a master account to multiple slave accounts in real-time. It provides a GUI to monitor master and slave accounts, trade status, and profit/loss.
 
-## Features  
-- Full‑featured GUI interface for managing trades and scaling operations.  
-- Support for multiple trading accounts – configured in `RTFTT_accounts.json`.  
-- Automated logging of trades (`RTFTT_trade_log.csv`) and errors (`RTFTT_error_log.csv`).  
-- Docker and docker‑compose ready for containerised deployment.  
-- Python dependencies listed in `requirements.txt` for reproducible environments.  
-- Modular setup with clean separation of GUI logic, configuration, logging and deployment.
+## Summary Project
+This project supports multiple slave accounts, automatically scales lot sizes, tracks open and closed trades, and handles daily drawdown limits. The GUI dashboard allows users to pause, resume, or close trades with a single click.
 
-## Installation Step  
-1. **Clone the repository**  
+## Features
+- Real-time trade copying from master to slave accounts.
+- Automatic lot size scaling based on balance.
+- Master and slave monitoring with P/L display.
+- GUI dashboard with pause/resume and close-all trades.
+- Threaded architecture for smooth real-time updates.
+- Risk Management:
+  - Daily drawdown limit (3% by default).
+  - Minimum lot enforcement.
+  - Retry mechanism for login/order failures.
+
+## Installation with Docker on Windows
+1. **Clone the repository**
    ```bash
    git clone https://github.com/mdkhussairiee/RTFTT-Scaling.git
    cd RTFTT-Scaling
    ```  
-2. **Install dependencies**  
-   ```bash
-   pip install -r requirements.txt
-   ```  
-3. **Configure accounts**  
+2. **Configure Accounts**  
    Edit `RTFTT_accounts.json` with your trading account details, credentials, API keys, or other parameters as required.  
-4. **Run locally (without Docker)**  
+3. **Run the application**  
    ```bash
-   python RTFTT_Scaling_Full_GUI.py
+   docker compose up --build
    ```  
-   This will launch the GUI interface and begin monitoring/logging trades as configured.  
-5. **Run with Docker**  
-   ```bash
-   docker-compose up --build
-   ```  
-   This will build and run the containerised application. You can adjust settings in `docker-compose.yml`.  
-6. **Check logs**  
-   - `RTFTT_trade_log.csv` — stores trade execution records  
-   - `RTFTT_error_log.csv` — captures error events for debugging  
-7. **Shutdown / tear down**  
+   This will launch the GUI interface and begin monitoring/logging trades as configured.   
+4. **Shutdown / tear down**  
    If using Docker:  
    ```bash
    docker-compose down
    ```  
-   Ensure any active processes or containers are stopped before making major config changes.
+   Make sure Docker Desktop is set to Windows containers mode.
 
 ## Author  
 **Name:** King (Representative, RTFTT)  
