@@ -45,6 +45,6 @@ The **RTFTT‑Scaling** project is a Python‑based utility designed to provide 
    Ensure any active processes or containers are stopped before making major config changes.
 
 ## Author  
-**Name:** Debra (Representative, Grab Holdings)  
-**Project Contact:** [Your email or GitHub handle]  
+**Name:** King (Representative, RTFTT)  
+**Project Contact:** [aslan.the.king.1981@gmail.com]  
 **Repository:** https://github.com/mdkhussairiee/RTFTT‑Scaling  
