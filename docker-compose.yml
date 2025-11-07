@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  rtftt_copier:
+    build: .
+    container_name: rtftt_copier
+    volumes:
+      - .:/app
+    environment:
+      - DISPLAY=:0  # For GUI on host (Linux)
+    network_mode: "host"

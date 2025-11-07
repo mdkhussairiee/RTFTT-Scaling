@@ -1,0 +1,11 @@
+{
+  "master": {
+    "login": 12345678,
+    "password": "master_password",
+    "server": "BrokerServer"
+  },
+  "slaves": [
+    {"login": 87654321, "password": "slave1_password", "server": "BrokerServer"},
+    {"login": 11223344, "password": "slave2_password", "server": "BrokerServer"}
+  ]
+}
