@@ -133,10 +133,11 @@ cd RTFTT-Scaling
 
 # Build and run with Docker Compose
 docker-compose up --build
+```
 
 ---
 
-## Author  
+## ⚡⚡⚡ Author  
 **Name:** King (Representative, RTFTT)  
 **Project Contact:** [aslan.the.king.1981@gmail.com]  
 **Repository:** https://github.com/mdkhussairiee/RTFTT‑Scaling  
