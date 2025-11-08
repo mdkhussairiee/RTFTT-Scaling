@@ -1,42 +1,122 @@
+# ☁️ Cloud-Based Trade Scaling System (for Futures Trading)
 
-# RTFTT MT5 Trade Scaling
+## 🎯 Objective
 
-## Description
-**RTFTT MT5 Trade Scaling** is a Python-based MetaTrader 5 (MT5) automation tool that allows users to copy trades from a master account to multiple slave accounts in real-time. It provides a GUI to monitor master and slave accounts, trade status, and profit/loss.
+Build a **cloud-based Trade Scaling Software** inspired by the provided architecture diagram — designed for **futures traders** who require **real-time trade mirroring, transparency, and scalability**.
 
-## Summary Project
-This project supports multiple slave accounts, automatically scales lot sizes, tracks open and closed trades, and handles daily drawdown limits. The GUI dashboard allows users to pause, resume, or close trades with a single click.
+---
 
-## Features
-- Real-time trade copying from master to slave accounts.
-- Automatic lot size scaling based on balance.
-- Master and slave monitoring with P/L display.
-- GUI dashboard with pause/resume and close-all trades.
-- Threaded architecture for smooth real-time updates.
-- Risk Management:
-  - Daily drawdown limit (3% by default).
-  - Minimum lot enforcement.
-  - Retry mechanism for login/order failures.
+## 🌐 System Overview
 
-## Installation with Docker on Windows
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/mdkhussairiee/RTFTT-Scaling.git
-   cd RTFTT-Scaling
-   ```  
-2. **Configure Accounts**  
-   Edit `RTFTT_accounts.json` with your trading account details, credentials, API keys, or other parameters as required.  
-3. **Run the application**  
-   ```bash
-   docker compose up --build
-   ```  
-   This will launch the GUI interface and begin monitoring/logging trades as configured.   
-4. **Shutdown / tear down**  
-   If using Docker:  
-   ```bash
-   docker-compose down
-   ```  
-   Make sure Docker Desktop is set to Windows containers mode.
+Develop a **modular, cloud-native trade scaling system** that enables seamless, real-time mirroring and scaling of trades across multiple accounts and trading platforms:
+
+- **MT4 / MT5**
+- **cTrader**
+- **DXTrade** *(Future)*
+- **TradeLocker** *(Future)*
+- **Match-Trader** *(Future)*
+
+The architecture should follow the provided diagram, emphasizing **speed**, **reliability**, and **flexibility**.
+
+---
+
+## 🧩 Core Components
+
+### 1. 🧠 Core Module
+- Acts as the **main processing and coordination hub**.
+- Manages **account data**, **session handling**, and **inter-process communication (IPC)** with the *Diagram Overview Map Editor App*.
+- Interfaces with **Connectors** for execution and logging.
+- Handles **strategy-level logic** and **trade routing decisions**.
+
+---
+
+### 2. 🔌 Connectors
+- Integrate directly with **broker APIs**:
+  - MT4/MT5 API  
+  - cTrader API  
+  - DXTrade API *(Future)*  
+  - TradeLocker API *(Future)*  
+  - Match-Trader API *(Future)*  
+- Translate internal trade instructions to **broker-native API calls**.
+- Ensure **multi-platform compatibility** and **high-frequency execution**.
+
+---
+
+### 3. 🖥️ Manual Order Management
+Receives trade signals from multiple sources:
+- Manual Trade Input  
+- Signal Providers  
+- REST API  
+- Filedrop (CSV / JSON)  
+- Algo Trading (1-Leg / 2-Leg HFT)  
+- Webhooks (TradingView, MT4/MT5 EA, Telegram-to-Mirror App)  
+
+Normalizes and routes orders to connected accounts through the **Core**.
+
+---
+
+### 4. 📊 Logging & Monitoring
+- Centralized logging system with a live **Mirror Log Viewer App**.
+- Generates detailed log files for **audit and debugging**.
+- Enables **transparency** and **performance review**.
+
+---
+
+### 5. 📈 Data Feed
+- Provides **real-time market data and pricing**.
+- Supplies the **Algo** and **Manual Order Management** modules for strategy optimization.
+
+---
+
+### 6. 💻 Front-End Applications
+
+#### Mirror Trading Manager App
+- Dashboard for managing accounts, trade routing, and performance metrics.
+
+#### Diagram Overview Map Editor App
+- Visual editor to map accounts, connections, and strategies.  
+- *(Free for all users.)*
+
+#### Mirror Log Viewer App
+- Visualization tool for logs, events, and trade executions.  
+- *(Free for all users.)*
+
+---
+
+## ⚙️ Technical Requirements
+
+| Component | Description |
+|------------|-------------|
+| **Architecture** | Microservices-based, Dockerized, deployable via Docker Compose |
+| **Communication** | REST API + WebSocket for live updates |
+| **Storage** | PostgreSQL or MongoDB for account & trade data |
+| **Logging** | Centralized ELK or custom log aggregation |
+| **Latency** | Sub-50ms order propagation across connected accounts |
+| **Security** | Encrypted API keys, secure webhooks, OAuth authentication |
+| **Scalability** | Horizontally scalable connectors and order management services |
+| **Languages** | Python (FastAPI) or Node.js (NestJS) for backend; React or Next.js for frontend |
+
+---
+
+## 🚀 Key Features
+- ⚡ **Lightning-fast execution** across accounts  
+- 🔁 **Seamless, lag-free trade scaling and mirroring**  
+- 📉 **Real-time analytics & trade journaling**  
+- 👁️ **Transparent account monitoring and reporting**  
+- 🧱 **API-first design** for external integrations (signal providers, Telegram bots, algos, etc.)  
+- 🔧 **Future-proof modular architecture** for connector expansion  
+
+---
+
+## 🧰 Deployment
+> **Docker-based Setup**
+```bash
+# Clone repository
+git clone https://github.com/mdkhussairiee/RTFTT-Scaling.git
+cd RTFTT-Scaling
+
+# Build and run with Docker Compose
+docker-compose up --build
 
 ## Author  
 **Name:** King (Representative, RTFTT)  
