@@ -18,6 +18,14 @@ Develop a **modular, cloud-native trade scaling system** that enables seamless, 
 
 The architecture should follow the provided diagram, emphasizing **speed**, **reliability**, and **flexibility**.
 
+### 🧭 Core Overview Diagram
+
+<p align="center">
+  <img src="https://antonnel.net/mirror//Mirror%20Core%20Overview.png" alt="Core Overview Diagram" width="85%">
+  <br>
+  <em>Figure 1: Core Overview – Main processing hub and data flow within the Trade Scaling System.</em>
+</p>
+
 ---
 
 ## 🧩 Core Components
@@ -96,6 +104,14 @@ Normalizes and routes orders to connected accounts through the **Core**.
 | **Scalability** | Horizontally scalable connectors and order management services |
 | **Languages** | Python (FastAPI) or Node.js (NestJS) for backend; React or Next.js for frontend |
 
+### ⚡ Master Speed Loop
+
+<p align="center">
+  <img src="https://antonnel.net/mirror//Master%20Speed%20Loop.png" alt="Master Speed Loop Diagram" width="85%">
+  <br>
+  <em>Figure 2: Master Speed Loop – Optimized execution path for sub-50ms latency trade scaling.</em>
+</p>
+
 ---
 
 ## 🚀 Key Features
@@ -117,6 +133,8 @@ cd RTFTT-Scaling
 
 # Build and run with Docker Compose
 docker-compose up --build
+
+---
 
 ## Author  
 **Name:** King (Representative, RTFTT)  
