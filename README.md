@@ -1,4 +1,4 @@
-# ☁️ Cloud-Based Trade Scaling System (for Futures Trading)
+# ☁️ Cloud-Based Trade Scaling System
 
 ## 🎯 Objective
 
