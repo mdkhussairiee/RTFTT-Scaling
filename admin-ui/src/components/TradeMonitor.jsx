@@ -1,1 +1,1 @@
-export default function TradeMonitor() { return <div>TradeMonitor</div>; }
+export default function TradeMonitor() { return <div>TradeMonitor</div>; } 

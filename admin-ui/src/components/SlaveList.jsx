@@ -1,1 +1,1 @@
-export default function SlaveList() { return <div>SlaveList</div>; }
+export default function SlaveList() { return <div>SlaveList</div>; } 

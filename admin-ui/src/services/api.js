@@ -1,1 +1,1 @@
-export const getMasters = () => [];
+export const getMasters = () => []; 
