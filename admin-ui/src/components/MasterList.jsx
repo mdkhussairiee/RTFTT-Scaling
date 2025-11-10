@@ -1,0 +1,1 @@
+export default function MasterList() { return <div>MasterList</div>; }

@@ -1,0 +1,1 @@
+export default function TradeMonitor() { return <div>TradeMonitor</div>; }
